@@ -1,0 +1,23 @@
+<div class="container">
+  <div class = "card">
+  <h3 class="text-center">City List</h3>
+  <div class = "card-body">
+  <table class="table table-striped">
+  <thead>
+  <th>CODE_CITY</th>
+  <th>NAME_CITY</th>
+  <th>NAME_CITY</th>
+  <th>SIGLA</th>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let city of citys">
+  <td>{{city.code_city}}</td>
+  <td>{{city.name_city}}</td>
+  <td>{{city.name_dpto}}</td>
+  <td>{{city.sigla}}</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
