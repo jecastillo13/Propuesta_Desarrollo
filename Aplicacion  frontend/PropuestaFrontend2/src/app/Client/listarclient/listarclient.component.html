@@ -1,0 +1,74 @@
+<div style="background: url('https://www.adapting.com/wp-content/uploads/2018/09/logo-thomasmti.jpg');">
+
+    
+
+
+
+    <link rel="stylesheet" href="listarclient.component.css">
+    <div class="container" style="background-color: white;">
+        <h3 class="text-center">Client List</h3>
+
+        <div class="container">
+            <div class="row justify-content-start">
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="https://img.icons8.com/fluency/20/000000/search-client.png" />
+                    </span>
+
+
+                    <input type="text" class="form-control" name=" filterPost" 
+                    placeholder="Search..." [(ngModel)]= " filterPost">
+
+
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>id_client</th>
+                            <th>name_client</th>
+                            <th>addres</th>
+                            <th>number_telefone</th>
+                            <th>code</th>
+                            <th>imagen</th>
+                            <th>tipo_cliente</th>
+                            <th>time_Inactivity</th>
+                            <th>floors</th>
+                            <th>office</th>
+                            <th>name_building</th>
+                            <th>city</th>
+                            <th>code_sioval</th>
+                            <th>code_sac</th>
+                            <th>nit</th>
+                            <th>Idcity</th>
+                            <th> Code_branchMti</th>
+
+
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let clients of client | filter: filterPost ">
+                                <td>{{clients.id_client}}</td>
+                                <td>{{clients.name_client}}</td>
+                                <td>{{clients.addres}}</td>
+                                <td>{{clients.number_telefone}}</td>
+                                <td>{{clients.code}}</td>
+                                <td>{{clients.imagen}}</td>
+                                <td>{{clients.tipo_cliente}}</td>
+                                <td>{{clients.time_Inactivity}}</td>
+                                <td>{{clients.floors}}</td>
+                                <td>{{clients.office}}</td>
+                                <td>{{clients.name_building}}</td>
+                                <td>{{clients.city}}</td>
+                                <td>{{clients.code_sioval}}</td>
+                                <td>{{clients.code_sac}}</td>
+                                <td>{{clients.nit}}</td>
+                                <td>{{clients.Idcity}}</td>
+                                <td>{{clients.Code_branchMti}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
