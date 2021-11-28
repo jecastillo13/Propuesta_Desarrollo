@@ -1,0 +1,177 @@
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<link rel="stylesheet" href="listarclient.component.css">
+<div class="container " style="background-color: white;">
+    <h3 class="text-center">-Lista de clientes-</h3>
+
+    <div class="container ">
+        <div class="row justify-content-start">
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                    <img src="https://img.icons8.com/fluency/20/000000/search-client.png" />
+                </span>
+
+
+                <input type="text" class="form-control" placeholder="Buscar por Nombre de cliente..." #txtSearch
+                    (keyup)="onSearchCodigosioval(txtSearch.value)" />
+            </div>
+
+            <div class="d-flex">
+                <div class="p-2">
+                    <button class="btn btn-link" (click)="pevPage()">
+                        Anteriores
+                    </button>
+                    &nbsp;
+                    <button class="btn btn-link" (click)="nextPage()"
+                        [disabled]="(client | filter:page:search).length === 0">
+                        Siguientes
+                    </button>
+                </div>
+
+                <div class="ml-auto p-12">
+                    <button class="btn btn-outline-success" (click)="Nuevo()">Nuevo</button>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="table-responsive table-bordered table-dark">
+                <table class="table">
+                    <thead>
+                        <th>id_client</th>
+                        <th>name_client</th>
+                        <th>addres</th>
+                        <th>number_telefone</th>
+                        <th>code</th>
+                        <th>imagen</th>
+                        <th>tipo_cliente</th>
+                        <th>time_Inactivity</th>
+                        <th>floors</th>
+                        <th>office</th>
+                        <th>name_building</th>
+                        <th>city</th>
+                        <th>code_sioval</th>
+                        <th>code_sac</th>
+                        <th>nit</th>
+                        <th>Idcity</th>
+                        <th> Code_branchMti</th>
+
+
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
+
+
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let clients of client | filter:page:search">
+                            <td>{{clients.id_client}}</td>
+                            <td>{{clients.name_client}}</td>
+                            <td>{{clients.addres}}</td>
+                            <td>{{clients.number_telefone}}</td>
+                            <td>{{clients.code}}</td>
+                            <td>{{clients.imagen}}</td>
+                            <td>{{clients.tipo_cliente}}</td>
+                            <td>{{clients.time_Inactivity}}</td>
+                            <td>{{clients.floors}}</td>
+                            <td>{{clients.office}}</td>
+                            <td>{{clients.name_building}}</td>
+                            <td>{{clients.city}}</td>
+                            <td>{{clients.code_sioval}}</td>
+                            <td>{{clients.code_sac}}</td>
+                            <td>{{clients.nit}}</td>
+                            <td>{{clients.Idcity}}</td>
+                            <td>{{clients.Code_branchMti}}</td>
+
+
+                            <td>
+                               <button 
+                               class="btn btn-outline-primary" 
+                               (click)="Edit(clients)">
+                               Editar
+                              </button>
+
+                                <!--Editar un cliente por medio de una ventana emergente 
+                                <button class="btn btn-info btn-sm" (click)="triggerModal(modalData, item)">
+                                    Edit </button>
+                                    -->
+
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-danger " (click)="Delete(clients)">Eliminar</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+<!--Ventana emergente para editar el cliente
+
+        <ng-template #modalData let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Edit Cliente</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+          
+              <div style="width: 400px; margin: auto;">
+                <div class="submit-form">
+                    <div class="form-group">
+                      <label for="isbn">ISBN</label>
+                      <input
+                        disabled
+                        type="text"
+                        class="form-control"
+                        id="isbn"
+                        required
+                        [(ngModel)]="currentBook.isbn"
+                        name="isbn"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="name">NAME</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                        [(ngModel)]="currentBook.name"
+                        name="name"
+                      />
+                    </div>
+                    <div class="form-group">
+                        <label for="author">AUTHOR</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="author"
+                          required
+                          [(ngModel)]="currentBook.author"
+                          name="author"
+                        />
+                    </div>
+                  </div>
+              </div>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" 
+              
+              (click)="updateBook()"
+              
+              (click)="modal.close('Save click')">Save</button>
+            </div>
+          </ng-template>
+          -->
