@@ -17,7 +17,7 @@ export class FilterPipe implements PipeTransform {
        return clients }
 
     const filteredCodigosioval = clients.filter(client =>
-      client.code_sioval.toLowerCase().includes(search.toLowerCase()));
+      client.name_client.toLowerCase().includes(search.toLowerCase()));
     return filteredCodigosioval.slice(page, page + 10);
 
   }
